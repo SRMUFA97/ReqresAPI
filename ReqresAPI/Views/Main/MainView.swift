@@ -32,8 +32,13 @@ struct MainView: View {
                     }
                 }
             }
-        .navigationBarTitle(Text("Colors from Reqres"))
-        }
+            .navigationBarTitle(Text("Colors from Reqres"))
+        }.onAppear(perform: getData)
+    }
+    
+    func getData() {
+        let network = Network()
+        network.getData()
     }
 }
 
