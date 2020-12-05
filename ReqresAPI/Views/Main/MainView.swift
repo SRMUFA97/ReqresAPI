@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var data = DataStore.shared
+    
     var body: some View {
         NavigationView {
-            List(DataStore.shared.reqresColors) { reqresColor in
+            List(data.reqresColors) { reqresColor in
                 VStack {
                     HStack {
                         Text("ID: \(reqresColor.id)")

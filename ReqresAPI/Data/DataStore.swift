@@ -6,8 +6,10 @@
 //  Copyright © 2020 Shamil Rakhimov. All rights reserved.
 //
 
-final class DataStore {
+import SwiftUI
+
+final class DataStore: ObservableObject {
     static let shared = DataStore()
     
-    var reqresColors: [ReqresColor] = []
+    @Published var reqresColors: [ReqresColor] = []
 }
