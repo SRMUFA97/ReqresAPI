@@ -9,31 +9,39 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var data = DataStore.shared
+    
     var body: some View {
         NavigationView {
-            List(DataStore.shared.reqresColors) { reqresColor in
+            List(data.reqresColors) { reqresColor in
                 VStack {
                     HStack {
                         Text("ID: \(reqresColor.id)")
                         Spacer()
-                        VStack {
-                            Text("\(reqresColor.name)")
-                                .bold()
+                        Spacer()
+                        VStack(alignment: .center) {
+                            Text("\(reqresColor.name)").fontWeight(.bold).multilineTextAlignment(.center)
                             Text("\(String(reqresColor.year))")
                         }
+                        Spacer()
                         Spacer()
                         VStack {
                             Text("\(reqresColor.code)")
                             Text("\(reqresColor.pantone)")
                         }
-                        Spacer()
                         Circle()
                             .foregroundColor(.gray).frame(width: 32, height: 32, alignment: .center)
                     }
                 }
             }
-        .navigationBarTitle(Text("Colors from Reqres"))
-        }
+            .navigationBarTitle(Text("Colors from Reqres"))
+        }.onAppear(perform: getData)
+    }
+    
+    func getData() {
+        let network = Network()
+        network.getData()
     }
 }
 
