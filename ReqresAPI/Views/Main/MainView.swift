@@ -15,23 +15,25 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List(data.reqresColors) { reqresColor in
-                VStack {
-                    HStack {
-                        Text("ID: \(reqresColor.id)")
-                        Spacer()
-                        Spacer()
-                        VStack(alignment: .center) {
-                            Text("\(reqresColor.name)").fontWeight(.bold).multilineTextAlignment(.center)
-                            Text("\(String(reqresColor.year))")
+                NavigationLink(destination: Text(reqresColor.name)) {
+                    VStack {
+                        HStack {
+                            Text("ID: \(reqresColor.id)")
+                            Spacer()
+                            Spacer()
+                            VStack(alignment: .center) {
+                                Text("\(reqresColor.name)").fontWeight(.bold).multilineTextAlignment(.center)
+                                Text("\(String(reqresColor.year))")
+                            }
+                            Spacer()
+                            Spacer()
+                            VStack {
+                                Text("\(reqresColor.code)")
+                                Text("\(reqresColor.pantone)")
+                            }
+                            Circle()
+                                .foregroundColor(self.colorConvert(hex: reqresColor.code)).frame(width: 32, height: 32, alignment: .center)
                         }
-                        Spacer()
-                        Spacer()
-                        VStack {
-                            Text("\(reqresColor.code)")
-                            Text("\(reqresColor.pantone)")
-                        }
-                        Circle()
-                            .foregroundColor(self.colorConvert(hex: reqresColor.code)).frame(width: 32, height: 32, alignment: .center)
                     }
                 }
             }
