@@ -9,14 +9,12 @@
 import SwiftUI
 
 struct MainView: View {
-    
     @ObservedObject var data = DataStore.shared
-    let oc = OneColor()
     
     var body: some View {
         NavigationView {
             List(data.reqresColors) { reqresColor in
-                NavigationLink(destination: self.oc) {
+                NavigationLink(destination: Text("some")) {
                     VStack {
                         HStack {
                             Text("ID: \(reqresColor.id)")
