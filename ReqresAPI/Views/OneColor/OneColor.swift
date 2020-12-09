@@ -20,10 +20,11 @@ struct OneColor: View {
             Spacer()
             VStack {
                 Spacer()
-                Text("\(self.reqresColor.name)").font(.title).bold()
                 Text("\(String(self.reqresColor.year))")
+                Text("\(self.reqresColor.name)").font(.title).bold()
                 Text("\(self.reqresColor.code)")
                 Text("\(self.reqresColor.pantone)")
+                Text("\n\n\n")
                 Spacer()
             }
             Spacer()
