@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D11B48B25650954003E9068 /* ReqresColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B48A25650954003E9068 /* ReqresColor.swift */; };
-		3D11B48E25650A56003E9068 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B48D25650A56003E9068 /* DataStore.swift */; };
-		3D15F607257A543200A4A00C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15F606257A543200A4A00C /* Network.swift */; };
 		3D15F609257A613700A4A00C /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15F608257A613700A4A00C /* NetworkModels.swift */; };
 		3D2BD4242558463D00F85454 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2BD4232558463D00F85454 /* MainView.swift */; };
 		3D6515AE257F96920093EAB6 /* OneColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6515AD257F96920093EAB6 /* OneColor.swift */; };
@@ -43,8 +41,6 @@
 
 /* Begin PBXFileReference section */
 		3D11B48A25650954003E9068 /* ReqresColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqresColor.swift; sourceTree = "<group>"; };
-		3D11B48D25650A56003E9068 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		3D15F606257A543200A4A00C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3D15F608257A613700A4A00C /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		3D2BD4232558463D00F85454 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3D6515AD257F96920093EAB6 /* OneColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneColor.swift; sourceTree = "<group>"; };
@@ -98,18 +94,9 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3D11B48C25650A35003E9068 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				3D11B48D25650A56003E9068 /* DataStore.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		3D15F605257A542000A4A00C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3D15F606257A543200A4A00C /* Network.swift */,
 				3D15F608257A613700A4A00C /* NetworkModels.swift */,
 			);
 			path = Network;
@@ -165,7 +152,6 @@
 			children = (
 				3DF78D5B2580CE0C00299245 /* Extensions */,
 				3D15F605257A542000A4A00C /* Network */,
-				3D11B48C25650A35003E9068 /* Data */,
 				3D11B4892565092C003E9068 /* Models */,
 				3D2BD4212558461900F85454 /* Views */,
 				3DF3D3B0255833360011C675 /* AppDelegate.swift */,
@@ -345,13 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF3D3B1255833360011C675 /* AppDelegate.swift in Sources */,
-				3D11B48E25650A56003E9068 /* DataStore.swift in Sources */,
 				3DF3D3B6255833360011C675 /* ReqresAPI.xcdatamodeld in Sources */,
 				3D6515AE257F96920093EAB6 /* OneColor.swift in Sources */,
 				3D2BD4242558463D00F85454 /* MainView.swift in Sources */,
 				3D15F609257A613700A4A00C /* NetworkModels.swift in Sources */,
 				3D11B48B25650954003E9068 /* ReqresColor.swift in Sources */,
-				3D15F607257A543200A4A00C /* Network.swift in Sources */,
 				3DF3D3B3255833360011C675 /* SceneDelegate.swift in Sources */,
 				3DF78D5D2580CE2500299245 /* ColorExtension.swift in Sources */,
 			);

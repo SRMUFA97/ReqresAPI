@@ -7,13 +7,14 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct MainView: View {
-    @ObservedObject var data = DataStore.shared
+    @State var data: [ReqresColor] = []
     
     var body: some View {
         NavigationView {
-            List(data.reqresColors) { reqresColor in
+            List(data) { reqresColor in
                 NavigationLink(destination: OneColor(reqresColor: reqresColor)) {
                     VStack {
                         HStack {
@@ -41,8 +42,19 @@ struct MainView: View {
     }
     
     func getData() {
-        let network = Network()
-        network.getData()
+        let url = URL(string: "https://reqres.in/api/unknown/")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let decoder = JSONDecoder()
+            if let json = try? decoder.decode(ResponseREQRES.self, from: data!) {
+                for color in json.data {
+                    let newColor = ReqresColor(id: UInt8(color.id), name: color.name, year: UInt16(color.year), code: color.color, pantone: color.pantone_value)
+                    
+                    DispatchQueue.main.async {
+                        self.data.append(newColor)
+                    }
+                }
+            }
+        }.resume()
     }
 }
 
