@@ -27,7 +27,7 @@ struct OneColor: View {
                 Spacer()
             }
             Spacer()
-        }.background(Color.blue).edgesIgnoringSafeArea(.all)
+        }.background(Color(hex: self.reqresColor.code)).edgesIgnoringSafeArea(.all)
         
     }
 }
