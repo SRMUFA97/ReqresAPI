@@ -19,13 +19,10 @@ struct MainView: View {
                     VStack {
                         HStack {
                             Text("ID: \(reqresColor.id)")
-                            Spacer()
-                            Spacer()
-                            VStack(alignment: .center) {
-                                Text("\(reqresColor.name)").fontWeight(.bold).multilineTextAlignment(.center)
+                            VStack(alignment: .leading) {
+                                Text("\(reqresColor.name)").fontWeight(.bold).multilineTextAlignment(.leading)
                                 Text("\(String(reqresColor.year))")
                             }
-                            Spacer()
                             Spacer()
                             VStack {
                                 Text("\(reqresColor.code)")
